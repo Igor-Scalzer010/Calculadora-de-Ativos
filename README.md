@@ -245,11 +245,7 @@ calculo_proporcional_acoes/
 ├── :file_folder: docs/
 │   └── CALCULO.md              # Documentação detalhada dos cálculos
 │
-├── :file_folder: build/        # Arquivos de build (gerados)
-│
-├── README.md                   # Esta documentação
-├── requirements.txt            # Dependências Python
-└── CalculadoraProporcional.spec # Especificação PyInstaller
+├── README.md                   # Está documentação
 ```
 
 ---
