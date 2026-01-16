@@ -5,15 +5,15 @@
 Para cada ativo `i`:
 
 $$
-\text{Proporção}(i) = \frac{\text{Valor}(i)}{\text{Valor\_Total\_dos\_Ativos}}
+\text{Proporção}(i) = \frac{\text{Valor}(i)}{\text{Valor Total dos Ativos}}
 $$
 
 $$
-\text{Custo}(i) = (\text{Nota\_Total\_com\_Custos} - \text{Valor\_Total\_dos\_Ativos}) \times \text{Proporção}(i)
+\text{Custo}(i) = (\text{Nota Total com Custos} - \text{Valor Total dos Ativos}) \times \text{Proporção}(i)
 $$
 
 $$
-\text{Valor\_Final}(i) = \text{Valor}(i) + \text{Custo}(i)
+\text{Valor Final}(i) = \text{Valor}(i) + \text{Custo}(i)
 $$
 
 ## Exemplo de Cálculo Detalhado
