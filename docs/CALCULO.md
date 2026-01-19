@@ -71,13 +71,6 @@ Se dividíssemos os custos igualmente, o ativo barato teria um custo percentual 
 
 ### Exemplo Visual
 
-```
-Total: R$ 8.000,00 → Custo Total: R$ 250,00
-
-PETR4 (R$ 1.500) ██████████████████                           18,75% → Custo: R$ 46,88
-VALE3 (R$ 2.500) ███████████████████████████████              31,25% → Custo: R$ 78,12
-ITUB4 (R$ 3.000) ██████████████████████████████████████       37,50% → Custo: R$ 93,75
-BBAS3 (R$ 1.000) ████████████                                 12,50% → Custo: R$ 31,25
-```
+![Gráfico de Distribuição Proporcional](../assets/graph.svg)
 
 [:back: Voltar para o README](../README.md)
