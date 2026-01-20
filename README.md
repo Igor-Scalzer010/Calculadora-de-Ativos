@@ -232,20 +232,31 @@ Se os emojis não aparecerem corretamente:
 ```
 calculo_proporcional_acoes/
 │
-├── :file_folder: src/
+├── 📁 src/
 │   ├── main.py                 # Script principal
-│   └── :file_folder: utils/
-│       ├── calcula.py          # Lógica de cálculo
+│   └── 📁 utils/
+│       ├── calcula.py          # Lógica do cálculo proporcional
 │       ├── formatters.py       # Formatação de valores BRL
 │       └── prompts.py          # Prompts customizados
 │
-├── :file_folder: tests/
+├── 📁 scripts/
+│   └── generate_chart.py       # Gerador de gráficos SVG com Plotly
+│
+├── 📁 tests/
 │   └── test_calcula.py         # Testes unitários
 │
-├── :file_folder: docs/
+├── 📁 docs/
 │   └── CALCULO.md              # Documentação detalhada dos cálculos
 │
-├── README.md                   # Está documentação
+├── 📁 data/
+│   └── demo_data.json          # Dados de demonstração para gerar gráficos
+│
+├── 📁 assets/
+│   ├── demo.gif                # GIF de demonstração
+│   └── graph.svg               # Gráfico gerado (output)
+│
+├── README.md                    # Esta documentação
+└── .gitignore                   
 ```
 
 ---
