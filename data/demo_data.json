@@ -1,0 +1,9 @@
+{
+  "custo_total": 250,
+  "items": [
+    { "ticker": "PETR4", "valor": 1500 },
+    { "ticker": "VALE3", "valor": 2500 },
+    { "ticker": "ITUB4", "valor": 3000 },
+    { "ticker": "BBAS3", "valor": 1000 }
+  ]
+}
