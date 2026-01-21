@@ -1,6 +1,6 @@
 # :gem: Calculadora de Ativos PRO
 
-[![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-FFD43B?style=plastic&logo=python&logoColor=3776AB)](https://www.python.org/) ![Version](https://img.shields.io/badge/Version-1.0.0-00C853?style=plastic&logo=semanticrelease&logoColor=white) ![OS](https://img.shields.io/badge/Platform-Windows-0078D6?style=plastic&logo=windows11&logoColor=white) ![Status](https://img.shields.io/badge/Status-Stable-success?style=plastic)
+[![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-FFD43B?style=plastic&logo=python&logoColor=3776AB)](https://www.python.org/) [![Version](https://img.shields.io/github/v/release/Igor-Scalzer010/Calculadora-de-Ativos?style=plastic&logo=semanticrelease&logoColor=white&label=Version&color=00C853)](https://github.com/Igor-Scalzer010/Calculadora-de-Ativos/releases/latest) ![OS](https://img.shields.io/badge/Platform-Windows-0078D6?style=plastic&logo=windows11&logoColor=white) ![Status](https://img.shields.io/badge/Status-Stable-success?style=plastic)
 
 > :bar_chart: **Distribuição Proporcional Inteligente** - Calcule automaticamente a distribuição proporcional de custos entre ativos com uma interface moderna e elegante no terminal.
 
@@ -77,14 +77,27 @@ Para a melhor experiência visual (com emojis e formatação), use um dos seguin
 
 ## :package: Instalação
 
-### :one: Clone ou baixe o projeto
+### :one: Execute no 🪟 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=plastic&logo=windows11&logoColor=white)
+
+1. Faça o download do arquivo `CalculadoraDeAtivosPRO_[versão]_win_x64.exe`: [![Latest Release](https://img.shields.io/github/v/release/Igor-Scalzer010/Calculadora-de-Ativos?style=plastic&logo=github&label=Download&color=00C853)](https://github.com/Igor-Scalzer010/Calculadora-de-Ativos/releases/latest)
+2. Abra o terminal (**Windows Terminal ou PowerShell**)
+3. Navegue até a pasta onde o arquivo `.exe` foi salvo
+4. Execute o programa:
 
 ```bash
-git clone https://github.com/seu-usuario/calculo_proporcional_acoes.git
-cd calculo_proporcional_acoes
+.\CalculadoraDeAtivosPRO_[versão]_win_x64.exe
 ```
 
-### :two: Instale as dependências
+5. Outra forma de executar é dando um **duplo clique** no arquivo `.exe`.
+
+### :two: Clone ou baixe o projeto
+
+```bash
+git clone https://github.com/Igor-Scalzer010/Calculadora-de-Ativos.git
+cd Calculadora-de-Ativos
+```
+
+### :three: Instale as dependências
 
 ```bash
 pip install rich
@@ -96,7 +109,7 @@ pip install rich
 pip install -r requirements.txt
 ```
 
-### :three: Execute o programa
+### :four: Execute o programa
 
 ```bash
 python src/main.py
