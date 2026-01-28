@@ -70,22 +70,22 @@ def calculate(ticket_names: list, values: list, types: list, total_grade: float)
     if total_volume == 0:
         raise ValueError("Total financial volume cannot be zero.")
 
-    # 1. Calculate Operational Balance (Theoretical without fees)
+    # 1. Calculate Operating Balance (Theoretical without fees)
     # Sale brings money in (+), Purchase takes money out (-)
-    operational_balance = sum(v if t == 'V' else -v for v, t in zip(values, types))
+    operating_balance = sum(v if t == 'V' else -v for v, t in zip(values, types))
 
     # 2. Calculate Total Costs
     # Cost = What should have remained (Balance) - What actually remained (Note)
     # Example: Should receive 1000, received 988. Cost = 12.
     # Example: Should pay -1000, paid -1012. Cost = (-1000) - (-1012) = 12.
     total_grade_signed = total_grade
-    if operational_balance != 0 and total_grade != 0:
-        if (operational_balance > 0 and total_grade < 0) or (
-            operational_balance < 0 and total_grade > 0
+    if operating_balance != 0 and total_grade != 0:
+        if (operating_balance > 0 and total_grade < 0) or (
+            operating_balance < 0 and total_grade > 0
         ):
             total_grade_signed = -total_grade
 
-    total_costs = operational_balance - total_grade_signed
+    total_costs = operating_balance - total_grade_signed
 
     new_values = {}
 
@@ -115,11 +115,11 @@ def calculate(ticket_names: list, values: list, types: list, total_grade: float)
 
 
 if __name__ == "__main__":
-    # Example usage
+    # This is a simple example usage.
     tickets = ["AAA", "BBB"]
-    vals = [1000.0, 4000.0]
-    types = ["C", "C"]
-    total_grade = 5005.0
+    vals = [1000.0, 2000.0]
+    types = ["C", "V"]
+    total_grade = 988
 
     result = calculate(tickets, vals, types, total_grade)
     for ticket, data in result.items():
