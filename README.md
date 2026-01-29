@@ -1,6 +1,6 @@
 # :gem: Calculadora de Ativos PRO
 
-[![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-FFD43B?style=plastic&logo=python&logoColor=3776AB)](https://www.python.org/) [![Version](https://img.shields.io/github/v/release/Igor-Scalzer010/Calculadora-de-Ativos?style=plastic&logo=semanticrelease&logoColor=white&label=Version&color=00C853)](https://github.com/Igor-Scalzer010/Calculadora-de-Ativos/releases/latest) ![OS](https://img.shields.io/badge/Platform-Windows-0078D6?style=plastic&logo=windows11&logoColor=white) ![Status](https://img.shields.io/badge/Status-Stable-success?style=plastic)
+[![Python](https://img.shields.io/badge/Python-3.8%20%7C%203.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-FFD43B?style=plastic&logo=python&logoColor=3776AB)](https://www.python.org/) [![Version](https://img.shields.io/github/v/release/Igor-Scalzer010/Calculadora-de-Ativos?style=plastic&logo=semanticrelease&logoColor=white&label=Version&color=00C853)](https://github.com/Igor-Scalzer010/Calculadora-de-Ativos/releases/latest) ![Windows](https://badgen.net/badge/icon/windows?icon=windows&label) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=plastic&logo=linux&logoColor=black) ![macOS](https://img.shields.io/badge/macOS-000000?style=plastic&logo=apple&logoColor=white) ![Status](https://img.shields.io/badge/Status-Stable-success?style=plastic)
 
 > :bar_chart: **Distribuição Proporcional Inteligente** - Calcule automaticamente a distribuição proporcional de custos entre ativos com uma interface moderna e elegante no terminal.
 
@@ -60,8 +60,9 @@ Você comprou 4 ativos diferentes em uma única nota de corretagem:
 ## :wrench: Pré-requisitos
 
 ### Sistema Operacional
-- :window: **Windows 10/11** ![Static Badge](https://img.shields.io/badge/testado-8A2BE)
-- :penguin: **Linux/macOS** ![Static Badge](https://img.shields.io/badge/compat%C3%ADvel%2C%20mas%20n%C3%A3o%20testado%20oficialmente-yellow)
+- ![Windows](https://badgen.net/badge/icon/windows?icon=windows&label) ![Static Badge](https://img.shields.io/badge/testado-8A2BE)
+- ![Linux](https://img.shields.io/badge/Linux-FFFFFF?style=plastic&logo=linux&logoColor=black) ![Static Badge](https://img.shields.io/badge/testado-8A2BE)
+- ![macOS](https://img.shields.io/badge/macOS-000000?style=plastic&logo=apple&logoColor=white) ![Static Badge](https://img.shields.io/badge/compat%C3%ADvel%2C%20mas%20n%C3%A3o%20testado%20oficialmente-yellow)
 
 ### Python
 - :snake: **Python 3.8 ou superior**
@@ -77,7 +78,7 @@ Para a melhor experiência visual (com emojis e formatação), use um dos seguin
 
 ## :package: Instalação
 
-### :one: Execute no 🪟 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=plastic&logo=windows11&logoColor=white)
+### :one: Execute no ![Windows](https://badgen.net/badge/icon/windows?icon=windows&label)
 
 1. Faça o download do arquivo `CalculadoraDeAtivosPRO_[versão]_win_x64.exe`: [![Latest Release](https://img.shields.io/github/v/release/Igor-Scalzer010/Calculadora-de-Ativos?style=plastic&logo=github&label=Download&color=00C853)](https://github.com/Igor-Scalzer010/Calculadora-de-Ativos/releases/latest)
 2. Abra o terminal (**Windows Terminal ou PowerShell**)
@@ -130,11 +131,11 @@ python main.py
 
 1. :memo: **Informe a quantidade de ativos** na nota
 2. :label: **Digite o nome/ticker** de cada ativo (ex: PETR4, VALE3, etc)
-3. :moneybag: **Informe o valor** de cada ativo (sem o custo de aquisição)
-4. :receipt: **Digite o valor total da nota** (com todos os custos incluídos)
-5. :zap: **Veja o resultado** em uma tabela formatada
-6. :arrows_counterclockwise: **Processe outra nota** ou saia
-
+3. :pencil2: **Informe o tipo de operação** para cada ativo (Compra ou Venda)
+4. :moneybag: **Informe o valor** de cada ativo (sem o custo de aquisição)
+5. :receipt: **Digite o valor total da nota** (com todos os custos incluídos)
+6. :zap: **Veja o resultado** em uma tabela formatada
+7. :arrows_counterclockwise: **Processe outra nota** ou saia
 ### Formato de Entrada
 
 :white_check_mark: Formato **correto** para entrada de valores:
@@ -155,21 +156,25 @@ python main.py
 
 ➤ Ativo #1
   🏷️  Nome/Ticker: PETR4
-  💲 Valor sem o custo de aquisição (PETR4): 1.500,00
+  🖍️  Tipo de Operação (o padrão é Compra) [C/V]: C
+  💲  Valor Financeiro (sem os custos/taxas) (PETR4): 1.500,00
 
 ➤ Ativo #2
   🏷️  Nome/Ticker: VALE3
-  💲 Valor sem o custo de aquisição (VALE3): 2500,00
+  🖍️  Tipo de Operação (o padrão é Compra) [C/V]: C
+  💲  Valor Financeiro (sem os custos/taxas) (VALE3): 2500,00
 
 ➤ Ativo #3
   🏷️  Nome/Ticker: ITUB4
-  💲 Valor sem o custo de aquisição (ITUB4): 3.000
+  🖍️  Tipo de Operação (o padrão é Compra) [C/V]: C
+  💲  Valor Financeiro (sem os custos/taxas) (ITUB4): 3.000
 
 ➤ Ativo #4
   🏷️  Nome/Ticker: BBAS3
-  💲 Valor sem o custo de aquisição (BBAS3): 1000
+  🖍️  Tipo de Operação (o padrão é Compra) [C/V]: C
+  💲  Valor Financeiro (sem os custos/taxas) (BBAS3): 1000
 
-🧾 Valor Total da Nota (Liquidação): 8.250,00
+🧾 Valor Líquido da Nota (Total Liquidação): 8.250,00
 ```
 
 ### Saída - Relatório de Custos
