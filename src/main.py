@@ -7,6 +7,8 @@ from rich.panel import Panel
 from rich.prompt import Prompt, IntPrompt, Confirm
 from rich import box
 import time
+import contextlib
+import signal
 
 console = Console(emoji=True, safe_box=True)
 
@@ -90,9 +92,17 @@ def main():
             console.clear()
             print_header()
 
+        # Prevents two consecutive KeyboardInterrupt.
         except KeyboardInterrupt:
-            console.print("\n[bold red1]:stop_sign: Operação interrompida pelo usuário.[/bold red1]")
+            old = signal.getsignal(signal.SIGINT)
+            signal.signal(signal.SIGINT, signal.SIG_IGN)
+            try:
+                with contextlib.suppress(KeyboardInterrupt):
+                    console.print("\n[bold red1]:stop_sign: Operação interrompida pelo usuário.[/bold red1]")
+            finally:
+                signal.signal(signal.SIGINT, old)   
             break
+        
         except ValueError as ve:
             console.print(f"\n[bold orange_red1]:warning: Erro de Validação: {ve}[/bold orange_red1]")
             console.print("[dim]Verifique os valores e tente novamente.[/dim]")
