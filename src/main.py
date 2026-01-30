@@ -1,5 +1,5 @@
 from utils.calcula import calculate
-from utils.formatters import format_brl
+from utils.formatters import format_brl, format_brl_signed
 from utils.prompts import FloatPromptBR
 from rich.console import Console
 from rich.table import Table
@@ -31,22 +31,26 @@ def main():
             
             ticket_names = []
             list_of_values = []
+            list_of_types = []
             
             for i in range(n):
                 console.print(f"\n[bold gold1]   :arrow_forward: Ativo #{i + 1}[/bold gold1]")
                 name = Prompt.ask("[bold medium_purple1]  :label:  Nome/Ticker[/bold medium_purple1]").strip().upper()
-                val = FloatPromptBR.ask(f"[bold medium_purple1]  :heavy_dollar_sign: Valor sem o custo de aquisição ([/bold medium_purple1][bold cyan]{name}[/bold cyan][bold medium_purple1])[/bold medium_purple1]")
+                op_type = Prompt.ask("[bold medium_purple1]  :crayon:  Tipo de Operação (o padrão é Compra)[/bold medium_purple1]", choices=["C", "V"], default="C", case_sensitive=False, show_default=False).strip().upper()
+                val = FloatPromptBR.ask(f"[bold medium_purple1]  :heavy_dollar_sign: Valor Financeiro (sem os custos/taxas) ([/bold medium_purple1][bold cyan]{name}[/bold cyan][bold medium_purple1])[/bold medium_purple1]")
+                
                 ticket_names.append(name)
+                list_of_types.append(op_type)
                 list_of_values.append(val)
 
             console.print()
-            total_grade = FloatPromptBR.ask("[bold hot_pink]:receipt: Valor Total da Nota (Liquidação)[/bold hot_pink]")
+            total_grade = FloatPromptBR.ask("[bold hot_pink]:receipt: Valor Líquido da Nota (Total Liquidação)[/bold hot_pink]")
 
             # Calculation
             with console.status("[bold violet]:gear: Processando distribuição proporcional...[/bold violet]", spinner="bouncingBar"):
                 # Simulate a tiny delay for UX
                 time.sleep(0.8) 
-                result = calculate(ticket_names, list_of_values, total_grade)
+                result = calculate(ticket_names, list_of_values, list_of_types, total_grade)
 
             # Display Results Table
             table = Table(title="[bold yellow]:bar_chart: Relatório de Custos[/bold yellow]",
@@ -57,15 +61,21 @@ def main():
                           border_style="violet"
                         )
             table.add_column(":label:  Nome/Ticker", style="bold cyan", no_wrap=True, justify="center")
-            table.add_column(":dollar: Valor Inicial", style="dodger_blue1", no_wrap=True, justify="center",)
-            table.add_column(":chart_with_downwards_trend: Custo (+)", style="red", no_wrap=True, justify="center")
+            table.add_column(":memo: Tipo de Operação", style="bold white", no_wrap=True, justify="center")
+            table.add_column(":dollar: Valor da Operação", style="dodger_blue1", no_wrap=True, justify="center",)
+            table.add_column(":chart_with_downwards_trend: Custo (+/-)", style="red", no_wrap=True, justify="center")
             table.add_column(":moneybag: Valor Final (=)", style="bold spring_green1", no_wrap=True, justify="center")
 
             for ticket, data in result.items():
+                op_label = "[dark_olive_green3]COMPRA[/]" if data['type'] == 'C' else "[orange_red1]VENDA[/]"
+                signed_cost = -data["cost"] if data["type"] == "V" else data["cost"]
+                cost_color = "[red]" if signed_cost < 0 else "[green]"
+                cost = format_brl_signed(signed_cost, show_plus=True)
                 table.add_row(
                     ticket,
+                    op_label,
                     format_brl(data['value']),
-                    format_brl(data['cost']),
+                    f"{cost_color}{cost}[/]",
                     format_brl(data['value_cost']),
                 )
 
